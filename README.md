@@ -14,28 +14,28 @@ This is a full-stack web application for managing user accounts with roles (admi
 - Deployment: Backend on Render, Frontend on Vercel, DB on MongoDB Atlas
 
 ## 📂 Project Structure
-root/
-├── backend/
-│ ├── src/
-│ │ ├── config/
-│ │ ├── controllers/
-│ │ ├── middleware/
-│ │ ├── models/
-│ │ ├── routes/
-│ │ └── utils/
-│ ├── tests/
-│ ├── server.js
-│ └── package.json
-│
-├── frontend/
-│ ├── src/
-│ │ ├── components/
-│ │ ├── pages/
-│ │ ├── services/
-│ │ ├── context/
-│ │ └── App.jsx
-│ ├── index.html
-│ └── package.json
+    root/
+    ├── backend/
+    │   ├── src/
+    │ │ ├── config/
+    │ │ ├── controllers/
+    │ │ ├── middleware/
+    │ │ ├── models/
+    │ │ ├── routes/
+    │ │ └── utils/
+    │ ├── tests/
+    │ ├── server.js
+    │ └── package.json
+    │
+    ├── frontend/
+    │ ├── src/
+    │ │ ├── components/
+    │ │ ├── pages/
+    │ │ ├── services/
+    │ │ ├── context/
+    │ │ └── App.jsx
+    │ ├── index.html
+    │ └── package.json
 
 ## Setup Instructions (Frontend & Backend)
 1. Clone repo: `git clone <repo-url>`
