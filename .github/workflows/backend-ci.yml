@@ -1,0 +1,30 @@
+name: Backend CI
+
+on:
+  push:
+    paths:
+      - "backend/**"
+  pull_request:
+
+jobs:
+  backend-test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Install Dependencies
+        run: |
+          cd backend
+          npm install
+
+      - name: Run Tests
+        run: |
+          cd backend
+          npm test
