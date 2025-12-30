@@ -1,0 +1,145 @@
+/* src/pages/Login.css */
+.login-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  background-size: cover;
+}
+
+.login-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 
+    0 10px 40px rgba(0, 0, 0, 0.08),
+    0 20px 80px rgba(59, 130, 246, 0.1);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 460px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.12),
+    0 30px 100px rgba(59, 130, 246, 0.15);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.login-header h2 {
+  margin: 0;
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #1e293b;
+}
+
+.login-header p {
+  margin: 0.75rem 0 0;
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 600;
+  color: #334155;
+  font-size: 0.95rem;
+}
+
+.form-input {
+  padding: 0.9rem 1.1rem;
+  border: 1.5px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  background: #f8fafc;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15);
+  background: white;
+}
+
+.input-error {
+  border-color: #ef4444 !important;
+}
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.85rem;
+  margin-top: 0.3rem;
+}
+
+.btn {
+  padding: 0.95rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 1.05rem;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #3b82f6 0%, #2563eb 100%);
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.35);
+}
+
+.btn-primary:disabled {
+  background: #94a3b8;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.login-footer {
+  text-align: center;
+  margin-top: 2rem;
+  color: #64748b;
+  font-size: 0.95rem;
+}
+
+.signup-link {
+  color: #3b82f6;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.signup-link:hover {
+  text-decoration: underline;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .login-card {
+    padding: 2rem 1.5rem;
+  }
+  
+  .login-header h2 {
+    font-size: 1.85rem;
+  }
+}

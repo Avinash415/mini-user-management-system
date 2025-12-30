@@ -1,0 +1,205 @@
+/* src/components/Navbar.css */
+
+/* ==========================================================================
+   Base Styles (Mobile-First)
+   ========================================================================== */
+.navbar {
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+  color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+/* Brand */
+.brand-link {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: white;
+  text-decoration: none;
+}
+
+/* Desktop/Tablet Welcome - Hidden on mobile */
+.welcome-desktop {
+  display: none; /* mobile pe hide */
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 1.05rem;
+}
+
+/* Mobile Welcome - Only inside menu */
+.welcome-mobile {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0 1.5rem;
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.welcome-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+.role-badge {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 0.3rem 0.9rem;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+/* Hamburger */
+.hamburger-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.hamburger-icon {
+  position: relative;
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+}
+
+.hamburger-icon::before,
+.hamburger-icon::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 3px;
+  background: white;
+  border-radius: 2px;
+  left: 0;
+  transition: all 0.3s ease;
+}
+
+.hamburger-icon::before { top: -8px; }
+.hamburger-icon::after { top: 8px; }
+
+/* Menu Dropdown */
+.navbar-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: #1e3a8a;
+  padding: 1.5rem 1.25rem;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.25);
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  animation: slideDown 0.3s ease;
+}
+
+.navbar-menu.open {
+  display: flex;
+}
+
+/* Menu Items */
+.nav-item {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.9rem 1.5rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.15);
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+.logout-btn {
+  background: rgba(239, 68, 68, 0.9) !important;
+}
+
+.logout-btn:hover {
+  background: #ef4444 !important;
+}
+
+/* ==========================================================================
+   Tablet & Desktop (Horizontal + Welcome Visible)
+   ========================================================================== */
+@media (min-width: 640px) {
+  .hamburger-btn {
+    display: none;
+  }
+
+  .navbar-container {
+    padding: 1rem 2rem;
+  }
+
+  .navbar-menu {
+    display: flex;
+    flex-direction: row;
+    position: static;
+    background: transparent;
+    padding: 0;
+    box-shadow: none;
+    gap: 1.25rem;
+  }
+
+  .mobile-welcome {
+    display: none;
+  }
+
+  .welcome-desktop {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-left: 2rem;
+    font-size: 1.05rem;
+  }
+
+  .nav-item {
+    width: auto;
+    padding: 0.6rem 1.3rem;
+    background: transparent;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar-container {
+    padding: 1.25rem 4rem;
+  }
+
+  .brand-link {
+    font-size: 1.9rem;
+  }
+}
+
+/* Animation */
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

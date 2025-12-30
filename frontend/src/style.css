@@ -1,0 +1,125 @@
+/* Global resets */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: Arial, sans-serif;
+  background: #f4f4f4;
+  color: #333;
+}
+
+/* Buttons */
+.btn {
+  padding: 12px 24px;                  /* Slightly larger for better touch */
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: flex;                       /* ← Crucial */
+  align-items: center;                 /* Vertical center */
+  justify-content: center;             /* Horizontal center */
+  min-height: 48px;                    /* Consistent height */
+  width: 100%;                         /* Full width on mobile */
+  text-align: center;                  /* Fallback */
+}
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+.btn-destructive {
+  background: #dc3545;
+  color: white;
+}
+
+/* Inputs */
+.input {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+.input-error {
+  border-color: red;
+}
+.validation-msg {
+  color: red;
+  font-size: 0.8em;
+}
+
+/* Table */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.table th,
+.table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.table th {
+  background: #f2f2f2;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+.pagination button {
+  margin: 0 5px;
+}
+
+/* Navbar */
+.navbar {
+  background: #333;
+  color: white;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* Loading Spinner */
+.spinner {
+  border: 4px solid #f3f3f3;
+  border-top: 4px solid #3498db;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .table {
+    font-size: 0.8em;
+  }
+  .navbar {
+    flex-direction: column;
+  }
+}
+
+/* Toasts and Modals will use library defaults, customize if needed */
