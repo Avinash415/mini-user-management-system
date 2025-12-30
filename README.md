@@ -15,6 +15,7 @@ This is a full-stack web application for managing user accounts with roles (admi
 
 ## 📂 Project Structure
     root/
+    ├── .github
     ├── backend/
     │   ├── src/
     │ │ ├── config/
@@ -23,8 +24,9 @@ This is a full-stack web application for managing user accounts with roles (admi
     │ │ ├── models/
     │ │ ├── routes/
     │ │ └── utils/
-    │ ├── tests/
+    │ ├── _tests_
     │ ├── server.js
+    | ├── Dockerfile
     │ └── package.json
     │
     ├── frontend/
@@ -64,7 +66,7 @@ This is a full-stack web application for managing user accounts with roles (admi
 - Database: MongoDB Atlas cluster, whitelist IPs in network access.
 
 ## API Documentation
-Use Postman collection: [Link to shared Postman collection](<postman-link>)
+Use Postman collection: [https://web.postman.co/workspace/My-Workspace~5ee8e30d-10aa-40bc-876d-2852a60386d0/collection/37267683-64a75fc6-b788-4674-89d7-23cccf2fede8?action=share&source=copy-link&creator=37267683]
 
 Endpoints:
 - POST /api/auth/signup: {fullName, email, password} → token
@@ -76,4 +78,38 @@ Endpoints:
 - PUT /api/users/profile: (auth) {fullName, email} → updated profile
 - PUT /api/users/password: (auth) {oldPassword, newPassword} → change password
 
-Example Request (Signup):
+## Authentication Routes :
+    | Method | Endpoint         | Description       |
+    | ------ | ---------------- | ----------------- |
+    | POST   | /api/auth/signup | User registration |
+    | POST   | /api/auth/login  | User login        |
+    | GET    | /api/auth/me     | Get current user  |
+    | POST   | /api/auth/logout | User logout       |
+
+## Admin Routes :
+    | Method | Endpoint                        | Description               |
+    | ------ | ------------------------------- | ------------------------- |
+    | GET    | /api/admin/users                | Get all users (paginated) |
+    | PATCH  | /api/admin/users/:id/activate   | Activate user             |
+    | PATCH  | /api/admin/users/:id/deactivate | Deactivate user           |
+
+## User Routes :
+    | Method | Endpoint                  | Description     |
+    | ------ | ------------------------- | --------------- |
+    | GET    | /api/user/profile         | View profile    |
+    | PUT    | /api/user/profile         | Update profile  |
+    | PUT    | /api/user/change-password | Change password |
+ 
+ ## 🧪 Testing :
+    cd backend
+    npm test
+
+## 🌍 Deployment :
+    🔗 Live Links
+    Frontend: [https://mini-user-management-system-amber.vercel.app]
+    Backend API: [https://mini-user-management-system-3u6w.onrender.com]
+   
+## 👨‍💻 Author :
+    Avinash Kumar
+    Backend Developer Intern Assessment – December 2025
+    Purple Merit Technologies
