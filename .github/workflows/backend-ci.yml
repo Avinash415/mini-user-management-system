@@ -5,32 +5,27 @@ on:
     paths:
       - "backend/**"
   pull_request:
+    paths:
+      - "backend/**"
 
 jobs:
-  backend-test:
-    runs-on: ubuntu-latest
+  test:
+    runs-on: ubuntu-20.04
 
     steps:
-      - name: Checkout Code
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - name: Install OpenSSL 1.1
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libssl1.1 || \
-          sudo apt-get install -y libssl-dev
-
-      - name: Install Dependencies
+      - name: Install dependencies
         run: |
           cd backend
           npm install
 
-      - name: Run Tests
+      - name: Run tests
         run: |
           cd backend
           npm test
