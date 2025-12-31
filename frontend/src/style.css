@@ -23,7 +23,7 @@ body {
   align-items: center;                 /* Vertical center */
   justify-content: center;             /* Horizontal center */
   min-height: 48px;                    /* Consistent height */
-  width: 100%;                         /* Full width on mobile */
+  /* width: 100%;                         Full width on mobile */
   text-align: center;                  /* Fallback */
 }
 .btn-primary {
@@ -120,6 +120,7 @@ body {
   .navbar {
     flex-direction: column;
   }
+
 }
 
 /* Toasts and Modals will use library defaults, customize if needed */

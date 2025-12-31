@@ -7,6 +7,6 @@ const router = express.Router();
 router.post('/signup', signup);
 router.post('/login', login);
 router.get('/me', protect, getMe);
-router.post('/logout', protect, logout); // Optional, since JWT is client-side
+router.post('/logout', protect, logout); 
 
 module.exports = router;
