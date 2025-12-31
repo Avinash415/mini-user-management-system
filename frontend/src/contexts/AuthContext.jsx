@@ -60,17 +60,13 @@ export const AuthProvider = ({ children }) => {
       });
 
       localStorage.setItem("token", res.data.token);
-      axios.defaults.headers.common[
-        "Authorization"
-      ] = `Bearer ${res.data.token}`;
+      axios.defaults.headers.common.Authorization = `Bearer ${res.data.token}`;
 
-      setUser(res.data.user);
+      // 🔥 IMPORTANT: fetch real user from backend
+      await getMe();
+
       toast.success("Signed up successfully");
-
-      // ✅ ensure state is committed before navigation
-      setTimeout(() => {
-        navigate("/profile");
-      }, 0);
+      navigate("/profile");
     } catch (err) {
       toast.error(err.response?.data?.error || "Signup failed");
     }
