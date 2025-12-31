@@ -77,6 +77,30 @@ Endpoints:
 - PUT /api/users/:id/deactivate: (admin) → deactivate user
 - PUT /api/users/profile: (auth) {fullName, email} → updated profile
 - PUT /api/users/password: (auth) {oldPassword, newPassword} → change password
+  
+
+ ## 🔐 Admin Account Handling & Security Design
+
+For security reasons, admin accounts cannot be created via the public signup API.
+
+The signup endpoint strictly allows only normal users (`role: user`).  
+Any attempt to pass the `role` field during signup is intentionally rejected to prevent unauthorized privilege escalation.
+
+### Admin Account Creation
+- Admin users are **pre-created (seeded)** directly in the database.
+- This simulates real-world production systems where admin access is tightly controlled.
+- Public APIs never allow role assignment.
+
+### Demo Admin Credentials
+For demonstration and evaluation purposes, a default admin account has been seeded:
+
+- **Email:** bablu@gmail.com  
+- **Password:** 123456789  
+
+> ⚠️ Note: In a production environment, admin users would be created via secure internal workflows or database seed scripts, not exposed public APIs.
+
+This approach ensures proper Role-Based Access Control (RBAC) and follows industry security best practices.
+
 
 ## Authentication Routes :
     | Method | Endpoint         | Description       |
@@ -108,6 +132,14 @@ Endpoints:
     🔗 Live Links
     Frontend: [https://mini-user-management-system-amber.vercel.app]
     Backend API: [https://mini-user-management-system-3u6w.onrender.com]
+
+### Cold Start Handling
+Since the backend is deployed on Render free tier, it may experience cold starts.
+To mitigate this:
+- A `/api/health` endpoint is implemented
+- Frontend pings the backend on initial load to wake the server
+- Loading states ensure smooth user experience
+
    
 ## 👨‍💻 Author :
     Avinash Kumar
