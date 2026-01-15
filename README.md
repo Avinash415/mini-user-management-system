@@ -1,6 +1,6 @@
 # Mini User Management System
 
-## Project Overview & Purpose :-
+## Project Overview & Purpose 
 This is a full-stack web application for managing user accounts with roles (admin/user), authentication, and RBAC. It supports signup, login, profile updates, password changes, and admin functions like viewing/activating/deactivating users. Built for Purple Merit Technologies Backend Developer Intern Assessment.
 
 ## Tech Stack Used
